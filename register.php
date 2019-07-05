@@ -53,7 +53,6 @@ require("layout/menu.php");
                             <h5>Register form</h5>
                         </div>
                         <div class="ibox-content">
-						<?php var_dump(ctype_space("vy\tnghia")); ?>
                             <form id="register_form" method="POST" action="" class="form-horizontal">
 								<div class="form-group"><label class="col-sm-1 control-label">First Name</label>
 									<div class="col-sm-10"><input type="text" name="firstName" value="" class="form-control" autocomplete="off"></div>
