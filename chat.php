@@ -142,7 +142,7 @@ require("layout/navtop.php");
 		<div class="col-lg-12">
 			<div class="ibox float-e-margins">
 				<div class="ibox-title">
-					Home panel
+					Request to Join
 				</div>
 				<div class="ibox-content">
 				<?php 
