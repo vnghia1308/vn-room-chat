@@ -68,7 +68,7 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
 
 			<?php endif;endif; ?>
  			<li>
-                <a href="logout.php"><span class="nav-label"><i class="fa fa-sign-out"></i> Đăng xuất</span></a>
+                <a href="logout.php"><span class="nav-label"><i class="fa fa-sign-out"></i> Logout</span></a>
             </li>
 			<?php endif; ?>
         </ul>
