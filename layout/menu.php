@@ -41,8 +41,6 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
 			<li class="<?= $accountMenu ?>">
                 <a href="account.php"><i class="fa fa-user-o"></i> <span class="nav-label">Account</span></a>
             </li>
-			<?php endif; ?>
-			
 			<li class="<?= $createRoomMenu ?>">
                 <a href="create_room.php"><i class="fa fa-plus"></i> <span class="nav-label">Create room</span></a>
             </li>
@@ -51,7 +49,7 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
 				<a href="my_room.php"><i class="fa fa-th-large"></i> <span class="nav-label">My room</span></a>
             </li>
 			
-			<?php if($inLogin): if($isAdmin): ?>
+			<?php if($isAdmin): ?>
 			<li class="<?= $adminArea ?>">
                 <a href="secret_admin.php"><i class="fa fa-cogs"></i> <span class="nav-label">Admin Area</span></a>
             </li>
