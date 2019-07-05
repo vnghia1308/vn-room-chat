@@ -64,7 +64,7 @@ require("layout/menu.php");
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Members pending</h5>
+                            <h5>Members management</h5>
                         </div>
                         <div class="ibox-content">
 						<?php
@@ -92,7 +92,7 @@ require("layout/menu.php");
 							endwhile;
 							
 							if(mysqli_num_rows($query) < 1){
-								echo "Nhóm bạn hiện chưa có thành viên nào!";
+								echo "Room has no members yet!";
 							}
 							?>
                         </div>
