@@ -89,7 +89,7 @@ require("layout/menu.php");
 							endwhile;
 							
 							if(mysqli_num_rows($query) < 1){
-								echo "Không có yêu cầu nào cần phê duyệt!";
+								echo "No requests need approval!";
 							}
 							?>
                         </div>
