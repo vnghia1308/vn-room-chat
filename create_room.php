@@ -62,7 +62,7 @@ require("layout/menu.php");
 								
 								<div class="form-group">
 									<div class="col-sm-4 col-sm-offset-1">
-										<button id="create_button" class="btn btn-primary" value="submit" name="submit" type="submit">Tạo room</button>
+										<button id="create_button" class="btn btn-primary" value="submit" name="submit" type="submit">Create room</button>
 									</div>
 								</div>
 							</form>
@@ -101,7 +101,7 @@ $("#create_form").on('submit',(function(e) {
 		cache: false,
 		processData:false,
 		beforeSend: function () {
-			$('#create_button').text('Đang xử lý...').prop('disabled', true)
+			$('#create_button').text('Processing...').prop('disabled', true)
 		},
 		success: function(r) {
 			if(r.success){
@@ -117,7 +117,7 @@ $("#create_form").on('submit',(function(e) {
 			
 		},
 		complete: function(){
-			$('#create_button').text('Tạo nhóm').prop('disabled', false)
+			$('#create_button').text('Create room').prop('disabled', false)
 		}
    });
 }));
