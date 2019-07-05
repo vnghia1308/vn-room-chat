@@ -15,7 +15,7 @@ if(checkUserSession($db) !== FALSE && !empty($_POST["txt-message"]) && !empty($_
 			
 			if(mysqli_num_rows($room_query) > 0){
 				$user = searchUser_bUsername($db, $user["username"]);
-				$message = $_POST["txt-message"];
+				$message = str_replace("'", "&apos;" ,htmlspecialchars($_POST["txt-message"])) and str_replace('"', "&quot;" ,htmlspecialchars($_POST["txt-message"]));
 				
 				$dateTime = date("Y-m-d H:i:s");
 				mysqli_query($db, "INSERT INTO messages(id,user_id,room_id,message,sent_time) VALUES (NULL, {$user["id"]}, $room_id, '$message', '$dateTime')") or die(json_encode(array("success" => false, "message" => "Error sql query")));
