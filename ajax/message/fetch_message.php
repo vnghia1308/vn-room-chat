@@ -48,13 +48,17 @@ while($r = mysqli_fetch_array($messageQuery)){
 	$user_message = searchUser_bId($db, $r["user_id"]);
 	$name = $user_message["firstName"] . " " . $user_message["lastName"];
 	if(!empty($user_message)){
+		$message_time = format_time_ago(strtotime($r["sent_time"]));
+		if(strpos($message_time, 'giây') !== false){
+			$message_time = "Just now";
+		}
 		if($user_message["username"] == $user["username"]){	
 			$_m = array(
 			"id" => $r["id"], 
 			"owner" => true, 
 			"sender" => $name, 
 			"message" => $r["message"], 
-			"time_ago" => format_time_ago(strtotime($r["sent_time"])),
+			"time_ago" => $message_time,
 			"profilePicture" => $user_message["profilePicture"]
 			);
 			
@@ -65,7 +69,7 @@ while($r = mysqli_fetch_array($messageQuery)){
 				"owner" => false, 
 				"sender" => $name, 
 				"message" => $r["message"], 
-				"time_ago" => format_time_ago(strtotime($r["sent_time"])),
+				"time_ago" => $message_time,
 				"profilePicture" => $user_message["profilePicture"]
 			);
 			
