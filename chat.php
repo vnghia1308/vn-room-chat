@@ -231,11 +231,7 @@ $(document).ready(function(){
 						'</div>' +
 					'</div>';
 					  
-					  if(!m.time_ago.includes("giây")){
-						  chat_temp += temp.replace("${profilePicture}", m.profilePicture).replace("${name}", m.sender).replace("${message}", m.message).replace("${time}", m.time_ago)
-					  } else {
-						  chat_temp += temp.replace("${profilePicture}", m.profilePicture).replace("${name}", m.sender).replace("${message}", m.message).replace("${time}", "Vừa xong")
-					  }
+					  chat_temp += temp.replace("${profilePicture}", m.profilePicture).replace("${name}", m.sender).replace("${message}", m.message).replace("${time}", m.time_ago)
 				  } else {
 					  //left messages
 					  var temp = '<div class="chat-message left">' +
@@ -249,11 +245,7 @@ $(document).ready(function(){
 						'</div>' +
 					'</div>';
 					  
-					  if(!m.time_ago.includes("giây")){
-						  chat_temp += temp.replace("${profilePicture}", m.profilePicture).replace("${name}", m.sender).replace("${message}", m.message).replace("${time}", m.time_ago)
-					  } else {
-						  chat_temp += temp.replace("${profilePicture}", m.profilePicture).replace("${name}", m.sender).replace("${message}", m.message).replace("${time}", "Vừa xong")
-					  }
+					  chat_temp += temp.replace("${profilePicture}", m.profilePicture).replace("${name}", m.sender).replace("${message}", m.message).replace("${time}", m.time_ago)
 				  }
 				});
 				
