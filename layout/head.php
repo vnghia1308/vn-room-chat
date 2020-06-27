@@ -11,7 +11,8 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?= $title ?></title>
+    <title><?= $title ?> - nIng</title>
+	<link rel="icon" type="image/png" href="https://ning.cygo.network/assets/logo_icon.png">
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
