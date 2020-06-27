@@ -17,7 +17,7 @@ if(checkUserSession($db) !== True){
 		$firstName = preg_replace('/\s+/', ' ', $firstName);
 		$lastName = preg_replace('/\s+/', ' ', $lastName);
 		
-		$profilePicture = "https://nghia.org/project/chat/assets/img/default.jpg"; //default
+		$profilePicture = "https://i.imgur.com/Srxxu0u.jpg"; //default
 		
 		$blackList = ["admin", "administrator", "gm", "fuck", "nigga", "faggot"];
 		
