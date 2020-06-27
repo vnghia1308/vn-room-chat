@@ -70,7 +70,7 @@ require("layout/menu.php");
 								<div class="form-group"><label class="col-sm-1 control-label">Password</label>
 									<div class="col-sm-10"><input type="password" name="password" value="" class="form-control"></div>
 								</div>
-								<div class="form-group"><label class="col-sm-1 control-label">Re-Password</label>
+								<div class="form-group"><label class="col-sm-1 control-label">Confirm Password</label>
 									<div class="col-sm-10"><input type="password" name="re_password" value="" class="form-control"></div>
 								</div>
 								<div class="form-group">
