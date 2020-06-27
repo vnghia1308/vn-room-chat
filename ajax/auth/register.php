@@ -19,7 +19,7 @@ if(checkUserSession($db) !== True){
 		
 		$profilePicture = "https://i.imgur.com/Srxxu0u.jpg"; //default
 		
-		$blackList = ["admin", "administrator", "gm", "fuck", "nigga", "faggot"];
+		$blackList = ["admin", "administrator", "gm", "root", "user", "~"];
 		
 		if(strlen($password) >= 6){
 			if(0 < count(array_intersect(array_map('strtolower', explode(' ', $username)), $blackList)) || 
