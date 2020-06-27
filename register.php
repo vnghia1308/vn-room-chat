@@ -130,7 +130,7 @@ $("#register_form").on('submit',(function(e) {
 			
 		},
 		complete: function(){
-			$('#rgbtn').text('Start register').prop('disabled', false)
+			$('#rgbtn').text('Submit').prop('disabled', false)
 		}
    });
 }));
