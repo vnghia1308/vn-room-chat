@@ -77,7 +77,7 @@ require("layout/menu.php");
 									<div class="col-sm-4 col-sm-offset-1">
 										<button id="rgbtn" class="btn btn-primary" value="submit" name="submit" type="submit">Register</button>
 										<br />
-										<p>Already have an account? <a href="login.php">Login now</a></p>
+										<p>Already have an account with nIng? <a href="login.php">Login now</a></p>
 									</div>
 								</div>
 							</form>
