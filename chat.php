@@ -14,7 +14,7 @@ if(!empty($_GET["room_id"])){
 	$room_id = $_GET["room_id"];
 	$user = searchUser_bSession($db, $_COOKIE["user_session"]);
 	
-	$query = mysqli_query($db, "select * from chat_room where room_id=$room_id") or error("Room id doesn't exist", $_HOME_FILE); //$_HOME_FILE --> /config/value.php
+	$query = mysqli_query($db, "select * from chat_room where room_id=$room_id") or error("The specified group chat ID does not exist.", $_HOME_FILE); //$_HOME_FILE --> /config/value.php
 	if(mysqli_num_rows($query) > 0){
 		//$_SESSION["current_room_id"] = $room_id;
 		$room_data = mysqli_fetch_array($query) or error("Can't get room data", $_HOME_FILE);
@@ -74,7 +74,7 @@ require("layout/navtop.php");
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
 
-                    Welcome you to room <?= $room_data["room_name"] ?> - <strong>Room ID: </strong> <?= $room_id ?>
+                    Welcome you to room <?= $room_data["room_name"] ?> - <strong>Group Chat ID: </strong> <?= $room_id ?>
 
                 </div>
             </div>
