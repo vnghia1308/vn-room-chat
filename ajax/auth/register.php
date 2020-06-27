@@ -67,10 +67,10 @@ if(checkUserSession($db) !== True){
 		}
 		
 	} else {
-		$registerStatus = array("success" => false, "message" => "Empty method");
+		$registerStatus = array("success" => false, "message" => "Error, please provide your desired credentials.");
 	}
 } else {
-	$registerStatus = array("success" => false, "message" => "Require login");
+	$registerStatus = array("success" => false, "message" => "You need to login to view this page.");
 }
 
 echo json_encode($registerStatus);
