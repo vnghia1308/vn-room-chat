@@ -45,6 +45,7 @@ require("layout/menu.php");
 
                 </div>
             </div>
+		<br/><center><img src="https://cygo.network/landing/wp-content/uploads/2020/04/cropped-newcygologofullwhite60percent.png"></center><br/>
         <div class="wrapper wrapper-content animated fadeIn">
             <div class="row">
                 <div class="col-lg-12">
