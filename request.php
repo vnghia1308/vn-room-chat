@@ -18,7 +18,7 @@ if(!empty($_GET["room_id"])){
 	if(mysqli_num_rows($query) > 0){
 		$room_data = mysqli_fetch_array($query) or error("Can't get room data");
 	} else {
-		error("Room id doesn't exist", $_HOME_FILE); //$_HOME_FILE --> /config/value.php
+		error("The specified group chat ID does not exist.", $_HOME_FILE); //$_HOME_FILE --> /config/value.php
 	}
 }
 
