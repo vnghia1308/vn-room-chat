@@ -47,23 +47,23 @@ if(checkUserSession($db) !== True){
 									$cookie_value = $userSession;
 									setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); //86400s = 1 day. 1 * 30 = 30 days
 									
-									$registerStatus = array("success" => true, "message" => "Register success");
+									$registerStatus = array("success" => true, "message" => "Successfully registered.");
 								} else {
-									$registerStatus = array("success" => false, "message" => "Account has existed. Please try again!");
+									$registerStatus = array("success" => false, "message" => "Account already exists.");
 								}
 							
 							} else {
-								$registerStatus = array("success" => false, "message" => "Re-password doesn't match!");
+								$registerStatus = array("success" => false, "message" => "Password Confirmiation doesn't match your first password!");
 							}
 						} else {
-							$registerStatus = array("success" => false, "message" => "Username can't contain spaces!");
+							$registerStatus = array("success" => false, "message" => "Username cannot contain spaces");
 						}
 					} else {
-						$registerStatus = array("success" => false, "message" => "Username doesn't accept special characters");
+						$registerStatus = array("success" => false, "message" => "Username cannot have special characters");
 					}
 				}
 			} else {
-			$registerStatus = array("success" => false, "message" => "Password must be 6 characters or more!");
+			$registerStatus = array("success" => false, "message" => "Password must be 6 characters or more");
 		}
 		
 	} else {
