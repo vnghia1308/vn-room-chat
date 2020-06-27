@@ -16,7 +16,7 @@ if(checkUserSession($db) !== FALSE && !empty($_POST["room_id"])){
 		$dateTime = date("Y-m-d H:i:s");
 		mysqli_query($db, "INSERT INTO request_join(id, user_id, room_id, time) VALUES (NULL, $user_id, $room_id, '$dateTime')") or die(json_encode(array("success" => false, "message" => "Error sql query")));
 		
-		$joinStatus = array("success" => true, "message" => "Join success");
+		$joinStatus = array("success" => true, "message" => "Successfully joined group chat.");
 	} else {
 		$joinStatus = array("success" => false, "message" => "Request exists");
 	}
