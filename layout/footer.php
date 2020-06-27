@@ -9,7 +9,7 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
 ?>
 <div class="footer">
     <div class="pull-right">
-		<p>&copy; Copyright 2017-2020 CYGO Network</p>
+	    <a href = "https://cygo.network" target = _blank><p>&copy; Copyright 2017-2020 CYGO Network</p></a>
     </div>
     <div>
 		<p><a href="https://cygo.network/landing/tos">Terms of Service</a></p>
