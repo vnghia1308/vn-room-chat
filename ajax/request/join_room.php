@@ -18,7 +18,7 @@ if(checkUserSession($db) !== FALSE && !empty($_POST["room_id"])){
 		
 		$joinStatus = array("success" => true, "message" => "Successfully joined group chat.");
 	} else {
-		$joinStatus = array("success" => false, "message" => "Request exists");
+		$joinStatus = array("success" => false, "message" => "You have already requested to join this group chat.");
 	}
 	
 	echo json_encode($joinStatus);
