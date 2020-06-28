@@ -115,12 +115,16 @@ require("layout/menu.php");
 									</div>
 								</div>
 							</form>
-                            
+
                         </div>
+												<center><br /><a href = "/logout.php">&nbsp;<p>Log Out</p>&nbsp;</a></center><br />
+
+
                     </div>
                 </div>
             </div>
         </div>
+
 		<!-- footer -->
 		<?php require("layout/footer.php") ?>
 		<!-- ./fotter -->
