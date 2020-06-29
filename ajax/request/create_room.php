@@ -25,7 +25,9 @@ if(checkUserSession($db) !== FALSE){
 	if(strlen($room_name) <= 30){
 		if(strlen($room_desc) <= 500){
 				$dateTime = date("Y-m-d H:i:s");
-				$insert_query = mysqli_query($db, "INSERT INTO chat_room(room_id,room_name,room_description,owner,created_time) VALUES (NULL, '$room_name', '$room_desc', $user_id, '$dateTime')");
+				$room_id = RAND();
+				//$insert_query = mysqli_query($db, "INSERT INTO chat_room(room_id,room_name,room_description,owner,created_time) VALUES (NULL, '$room_name', '$room_desc', $user_id, '$dateTime')");
+				$insert_query = mysqli_query($db, "INSERT INTO chat_room(room_id,room_name,room_description,owner,created_time) VALUES ('$room_id', '$room_name', '$room_desc', $user_id, '$dateTime')");
 				
 				if($insert_query){
 					$createStatus = array(
