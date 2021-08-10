@@ -48,7 +48,7 @@ require("layout/menu.php");
 			<div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Change profile picture</h5>
+                            <h5>Change profile photo</h5>
                         </div>
                         <div class="ibox-content">
 							<form id="change_picture" method="GET" action="chat.php" class="form-horizontal">
@@ -58,7 +58,7 @@ require("layout/menu.php");
 								
 								<div class="form-group">
 									<div class="col-sm-4 col-sm-offset-1">
-										<small><p>You will be banned if using sensitive image/picture.</p></small>
+										<small><p>Using your <a href="https://bleu.cygo.network">Bleu</a> profile photo is recommended.</p></small>
 										<button id="cppbtn" class="btn btn-primary" name="submit" type="submit">Change</button>
 									</div>
 								</div>
@@ -115,12 +115,16 @@ require("layout/menu.php");
 									</div>
 								</div>
 							</form>
-                            
+
                         </div>
+												<center><br /><a href = "/logout.php">&nbsp;<p>Log Out</p>&nbsp;</a></center><br />
+
+
                     </div>
                 </div>
             </div>
         </div>
+
 		<!-- footer -->
 		<?php require("layout/footer.php") ?>
 		<!-- ./fotter -->

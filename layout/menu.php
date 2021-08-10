@@ -12,11 +12,11 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element"> 
-				<?php if($inLogin): ?><span><img alt="image" class="img-circle" src="<?= $profilePicture ?>" width="50px" height="50px" /></span><?php endif; ?>
+				<?php if($inLogin): ?><center><span><img alt="image" class="img-circle" src="<?= $profilePicture ?>" width="50px" height="50px" /></span></center><?php endif; ?>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear"> 
 							<span class="block m-t-xs"> 
-								<strong class="font-bold"><?= $userName ?></strong>
+								<center><br/><h3><strong class="font-bold"><?= $userName ?></strong></h3></center>
                              </span> 
 								<!-- <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> -->
 							 </span> 
@@ -30,7 +30,7 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
                     </ul> -->
                 </div>
                 <div class="logo-element">
-                    VN
+                    <img src="https://ning.cygo.network/assets/logo_icon.png" height="50" width="50">
                 </div>
             </li>
 			<li class="<?= $homeChatMenu ?>">
@@ -42,11 +42,11 @@ if (strpos($_SERVER["SCRIPT_URI"], $filename) !== false) {
                 <a href="account.php"><i class="fa fa-user-o"></i> <span class="nav-label">Account</span></a>
             </li>
 			<li class="<?= $createRoomMenu ?>">
-                <a href="create_room.php"><i class="fa fa-plus"></i> <span class="nav-label">Create room</span></a>
+                <a href="create_room.php"><i class="fa fa-plus"></i> <span class="nav-label">Create Group</span></a>
             </li>
 			
             <li class="<?= $myRoomMenu ?>">
-				<a href="my_room.php"><i class="fa fa-th-large"></i> <span class="nav-label">My room</span></a>
+				<a href="my_room.php"><i class="fa fa-th-large"></i> <span class="nav-label">Groups</span></a>
             </li>
 			
 			<?php if($isAdmin): ?>

@@ -17,9 +17,9 @@ if(checkUserSession($db) !== True){
 		$firstName = preg_replace('/\s+/', ' ', $firstName);
 		$lastName = preg_replace('/\s+/', ' ', $lastName);
 		
-		$profilePicture = "https://nghia.org/project/chat/assets/img/default.jpg"; //default
+		$profilePicture = "https://i.imgur.com/Srxxu0u.jpg"; //default
 		
-		$blackList = ["admin", "administrator", "gm", "fuck", "nigga", "faggot"];
+		$blackList = ["admin", "administrator", "gm", "root", "user", "~"];
 		
 		if(strlen($password) >= 6){
 			if(0 < count(array_intersect(array_map('strtolower', explode(' ', $username)), $blackList)) || 
@@ -47,30 +47,30 @@ if(checkUserSession($db) !== True){
 									$cookie_value = $userSession;
 									setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); //86400s = 1 day. 1 * 30 = 30 days
 									
-									$registerStatus = array("success" => true, "message" => "Register success");
+									$registerStatus = array("success" => true, "message" => "Successfully registered.");
 								} else {
-									$registerStatus = array("success" => false, "message" => "Account has existed. Please try again!");
+									$registerStatus = array("success" => false, "message" => "Account already exists.");
 								}
 							
 							} else {
-								$registerStatus = array("success" => false, "message" => "Re-password doesn't match!");
+								$registerStatus = array("success" => false, "message" => "Password Confirmiation doesn't match your first password!");
 							}
 						} else {
-							$registerStatus = array("success" => false, "message" => "Username can't contain spaces!");
+							$registerStatus = array("success" => false, "message" => "Username cannot contain spaces");
 						}
 					} else {
-						$registerStatus = array("success" => false, "message" => "Username doesn't accept special characters");
+						$registerStatus = array("success" => false, "message" => "Username cannot have special characters");
 					}
 				}
 			} else {
-			$registerStatus = array("success" => false, "message" => "Password must be 6 characters or more!");
+			$registerStatus = array("success" => false, "message" => "Password must be 6 characters or more");
 		}
 		
 	} else {
-		$registerStatus = array("success" => false, "message" => "Empty method");
+		$registerStatus = array("success" => false, "message" => "Error, please provide your desired credentials.");
 	}
 } else {
-	$registerStatus = array("success" => false, "message" => "Require login");
+	$registerStatus = array("success" => false, "message" => "You need to login to view this page.");
 }
 
 echo json_encode($registerStatus);

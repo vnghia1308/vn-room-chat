@@ -4,7 +4,7 @@ if(!session_id()){
 	session_start();
 }
 require("config/db.php");
-$title = "My room";
+$title = "Groups";
 require("layout/head.php"); // $title = "page title"
 
 if(checkUserSession($db) !== True){
@@ -32,13 +32,13 @@ require("layout/menu.php");
 		?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>My room</h2>
+                    <h2>Groups</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="<?= $_HOME_FILE ?>">Home</a>
                         </li>
 						<li>
-                            <a>My room</a>
+                            <a>My groups</a>
                         </li>
                     </ol>
                 </div>
@@ -52,7 +52,7 @@ require("layout/menu.php");
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Your room has owner</h5>
+                            <h3>Groups you administrate</h3>
                         </div>
                         <div class="ibox-content">
 						<?php
@@ -69,20 +69,20 @@ require("layout/menu.php");
 						?>
 								<div class="social-feed-box" id="room-<?= $room["room_id"] ?>">
 								<div class="social-avatar">
-									<small class="text-muted"><?= $room["room_name"] ?></small>
+									 <a href="<?= $_CHAT_FILE ?>?room_id=<?= $room["room_id"] ?>"><h3 class="text-muted"><?= $room["room_name"] ?></h3></a>
 								</div>
 								<div class="social-body">
-									<strong>Description: </strong> <?= !empty($room["room_description"]) ? $room["room_description"] : "null"; ?>
+									<p><?= !empty($room["room_description"]) ? $room["room_description"] : "null"; ?></p>
 								<p></p><hr><p></p>
 								<div class="file-option">
-									<a href="<?= $_CHAT_FILE ?>?room_id=<?= $room["room_id"] ?>"><button class="btn btn-success btn-rounded btn-sm"><i class="fa fa-sign-in"></i> Redirect to room</button></a>
-									<button class="btn btn-danger btn-rounded btn-sm" onclick="delete_room(<?= $room["room_id"] ?>)"><i class="fa fa-times"></i> Delete Room</button>
+								<!-- GROUP LINK	<a href="<?= $_CHAT_FILE ?>?room_id=<?= $room["room_id"] ?>"><button class="btn btn-success btn-rounded btn-sm"><i class="fa fa-sign-in"></i> Redirect to room</button></a> -->
+								<!-- GROUP DELETE	<button class="btn btn-danger btn-rounded btn-sm" onclick="delete_room(<?= $room["room_id"] ?>)"><i class="fa fa-times"></i> Delete Group</button>-->
 								</div>
 										</div>
 								</div>
 							<?php endwhile;
 							if(mysqli_num_rows($query) < 1){
-								echo "You haven't created a room yet!";
+								echo "You aren't an admin in any groups yet.";
 							}
 							
 							$query1 = mysqli_query($db, "select * from chat_room where owner = {$user["id"]}") or error("Can't get room data", $_HOME_FILE);
@@ -114,7 +114,7 @@ require("layout/menu.php");
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Your room has joined</h5>
+                            <h3>Groups you participate in</h3>
                         </div>
                         <div class="ibox-content">
 						<?php
@@ -134,10 +134,10 @@ require("layout/menu.php");
 						?>
 								<div class="social-feed-box" id="room-<?= $room["room_id"] ?>">
 								<div class="social-avatar">
-									<small class="text-muted"><?= $room["room_name"] ?> (đã tham gia vào <?= format_time_ago(strtotime($mem["join_date"])) ?>)</small>
+									<h3 class="text-muted"><?= $room["room_name"] ?> (đã tham gia vào <?= format_time_ago(strtotime($mem["join_date"])) ?>)</h3>
 								</div>
 								<div class="social-body">
-									<strong>Description: </strong> <?= !empty($room["room_description"]) ? $room["room_description"] : "null"; ?>
+									<p><?= !empty($room["room_description"]) ? $room["room_description"] : "null"; ?></p>
 								<p></p><hr><p></p>
 								<div class="file-option">
 									<a href="<?= $_CHAT_FILE ?>?room_id=<?= $room["room_id"] ?>"><button class="btn btn-success btn-rounded btn-sm"><i class="fa fa-sign-in"></i> Redirect to room</button></a>
@@ -146,7 +146,7 @@ require("layout/menu.php");
 								</div>
 							<?php endwhile;
 							if(mysqli_num_rows($query) < 1){
-								echo "You haven't joined a room yet!";
+								echo "You haven't joined a group yet!";
 							}
 							
 							$query1 = mysqli_query($db, "select * from room_member where user_id = {$user["id"]}") or error("Can't get room data", $_HOME_FILE);
@@ -195,7 +195,7 @@ require("layout/menu.php");
 <script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 <script>
 function delete_room(room_id){
-	var c = confirm("Are you sure? Press OK if you wanna delete this room!");
+	var c = confirm("Are you sure? Press OK if you're sure you want to delete this group.");
 	if (c == true) {
 		$.ajax({
 			url: "ajax/request/delete_room.php",

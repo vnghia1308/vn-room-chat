@@ -45,6 +45,7 @@ require("layout/menu.php");
 
                 </div>
             </div>
+		<br/><center><img src="https://cygo.network/landing/wp-content/uploads/2020/04/cropped-newcygologofullwhite60percent.png"></center><br/>
         <div class="wrapper wrapper-content animated fadeIn">
             <div class="row">
                 <div class="col-lg-12">
@@ -70,14 +71,14 @@ require("layout/menu.php");
 								<div class="form-group"><label class="col-sm-1 control-label">Password</label>
 									<div class="col-sm-10"><input type="password" name="password" value="" class="form-control"></div>
 								</div>
-								<div class="form-group"><label class="col-sm-1 control-label">Re-Password</label>
+								<div class="form-group"><label class="col-sm-1 control-label">Confirm Password</label>
 									<div class="col-sm-10"><input type="password" name="re_password" value="" class="form-control"></div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4 col-sm-offset-1">
-										<button id="rgbtn" class="btn btn-primary" value="submit" name="submit" type="submit">Start register</button>
+										<button id="rgbtn" class="btn btn-primary" value="submit" name="submit" type="submit">Register</button>
 										<br />
-										<p>Already have an account? <a href="login.php">Login now</a></p>
+										<p>Already have an account with nIng? <a href="login.php">Login now</a></p>
 									</div>
 								</div>
 							</form>
@@ -130,7 +131,7 @@ $("#register_form").on('submit',(function(e) {
 			
 		},
 		complete: function(){
-			$('#rgbtn').text('Start register').prop('disabled', false)
+			$('#rgbtn').text('Submit').prop('disabled', false)
 		}
    });
 }));

@@ -4,7 +4,7 @@ if(!session_id()){
 	session_start();
 }
 require("config/db.php");
-$title = "Create room";
+$title = "Create a group";
 require("layout/head.php"); // $title = "page title"
 
 if(checkUserSession($db) !== True){
@@ -32,10 +32,10 @@ require("layout/menu.php");
 		?>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Room</h2>
+                    <h2>Create a group</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="create_room.php">Create Room Chat</a>
+                            <!--<a href="create_room.php">Create a group</a>-->
                         </li>
                     </ol>
                 </div>
@@ -48,15 +48,15 @@ require("layout/menu.php");
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Create Room Form</h5>
+                            <!--<h5>Create Room Form</h5>-->
                         </div>
                         <div class="ibox-content">
 							<form id="create_form" class="form-horizontal">
-								<div class="form-group"><label class="col-sm-1 control-label">Room Name</label>
+								<div class="form-group"><label class="col-sm-1 control-label">Group name</label>
 									<div class="col-sm-10"><input type="text" name="room_name" value="" class="form-control" autocomplete="off"></div>
 								</div>
 								
-								<div class="form-group"><label class="col-sm-1 control-label">Room description</label>
+								<div class="form-group"><label class="col-sm-1 control-label">Group description</label>
 									<div class="col-sm-10"><input type="text" name="room_desc" value="" class="form-control" autocomplete="off"></div>
 								</div>
 								

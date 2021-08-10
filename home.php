@@ -4,7 +4,7 @@ if(!session_id()){
 	session_start();
 }
 require("config/db.php");
-$title = "Home";
+$title = "Dashboard";
 require("layout/head.php"); // $title = "page title"
 
 if(checkUserSession($db) !== True){
@@ -42,19 +42,22 @@ require("layout/menu.php");
                 <div class="col-lg-2">
 
                 </div>
-            </div>
+            </div><center><br /><br /><h3>Welcome to nIng, an open source alternative to Discord, Slack, Skype, and many more.  nIng is completely free and you can create unlimited group chats with it.<br /></center><br />
+			<center><h3>Start by joining or <a href = "/create_room.php">creating a group</a></h3><br /></center>
         <div class="wrapper wrapper-content animated fadeIn">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Home panel</h5>
+                            <h5>Join a group</h5>
                         </div>
+					
                         <div class="ibox-content">
+							
 							<form method="GET" action="<?= $_CHAT_FILE ?>" class="form-horizontal">
-								<div class="form-group"><label class="col-sm-1 control-label">Join room id</label>
+								<div class="form-group"><label class="col-sm-1 control-label">Group ID</label>
 									<div class="col-sm-10"><input type="text" name="room_id" value="" class="form-control" autocomplete="off"></div>
-								</div>
+									</div>
 							</form>
                             <?php
 							if(!empty($_SESSION["error_log"])){
